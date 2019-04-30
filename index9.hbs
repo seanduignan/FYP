@@ -1,0 +1,145 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="header">
+  <a href="/" class="logo">Farm Tracker</a>
+  <div class="header-right">
+    <a href="/get-data">Records</a>
+    <a class = "active" href="/getim">Cattle</a>
+    <a href="/getfeed">Feed</a>
+    <a href="/getvet">Vet Bills</a>
+    <a href="/getsupply">Supplies</a>
+    <a href="/removeupdate">Remove/Update</a>
+    <a href="/get-profitdata">Profits</a>
+
+  </div>
+</div>
+
+-<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("/images/bull4.jpg");
+
+  min-height: 800px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+
+/* Add styles to the form container */
+.container {
+  position: absolute ;
+
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  max-height: 600px;
+  padding: 16px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: white, opacity: 0.5;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  height: 5px;
+  padding: 15px;
+  margin: 0px 0 00px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {font-family: Raleway, sans-serif; margin:0}
+  </style>
+  </head>
+
+
+
+  <div class="bg-img">
+    <form action="/insert" autocomplete="off" method="post" class="container">
+      <section class="insert">
+      <h3>Animals</h3>
+        <div class="input">
+            <label for="tag">Tag</label>
+            <input type="text" placeholder="Enter Tag" id="tag" name="tag">
+        </div>
+        <div class="input">
+            <label for="gender">Gender</label>
+            <input type="radio" id="gender" name="gender" value="Bull" checked> Male<br>
+            <input type="radio" id="gender" name="gender" value="Heifer"> Female<br><br>
+        </div>
+        <div class="input">
+            <label for="sire">Sire</label>
+            <input type="text" placeholder="Enter Sire" id="sire" name="sire">
+        </div>
+        <div class="input">
+            <label for="breed">Breed</label>
+            <input type="text" placeholder="Enter Breed" id="breed" name="breed">
+        </div>
+        <div class="input">
+            <label for="dob">D.O.B.</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+        <div class="input">
+            <label for="due">Calving Date</label>
+            <input type="date" id="due" name="due">
+        </div>
+        <div class="input">
+            <label for="dos">D.O.S.</label>
+            <input type="date" id="dos" name="dos">
+        </div>
+        <div class="input">
+            <label for="pur">Purchase Price</label>
+            <input type="text" placeholder="Enter Purchase Price" id="pur" name="pur">
+        </div>
+
+        <div class="input">
+            <label for="sal">Sale Price</label>
+            <input type="text" placeholder="Enter Sale Price" id="sal" name="sal">
+        </div>
+        <button type="submit" class="btn">INSERT</button>
+    </form>

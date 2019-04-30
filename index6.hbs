@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="header">
+  <a href="/" class="logo">Farm Tracker</a>
+  <div class="header-right">
+    <a href="/get-data">Records</a>
+    <a href="/getim">Cattle</a>
+    <a href="/getfeed">Feed</a>
+    <a href="/getvet">Vet Bills</a>
+    <a href="/getsupply">Supplies</a>
+    <a class = "active" href="/removeupdate">Remove/Update</a>
+    <a href="/get-profitdata">Profits</a>
+
+  </div>
+</div>
+  <br>
+
+  <style>
+body{background-image: url("images/grass.jpg") }
+</style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {font-family: Raleway, sans-serif; margin:0}
+
+  </style>
+  </head>
+
+<section class="update">
+    <h3>Update Cattle</h3>
+    <form action="/update" method="post">
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <div class="input">
+            <label for="tag">Tag</label>
+            <input type="text" id="tag" name="tag">
+        </div>
+        <div class="input">
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender">
+        </div>
+        <div class="input">
+            <label for="sire">Sire</label>
+            <input type="text" id="sire" name="sire">
+        </div>
+        <div class="input">
+            <label for="breed">Breed</label>
+            <input type="text" id="breed" name="breed">
+        </div>
+        <div class="input">
+            <label for="dob">D.O.B.</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+        <div class="input">
+            <label for="due">Calving Date</label>
+            <input type="date" id="due" name="due">
+        </div>
+        <div class="input">
+            <label for="pur">Purchase Price</label>
+            <input type="text" id="pur" name="pur">
+        </div>
+        <div class="input">
+            <label for="dos">D.O.S.</label>
+            <input type="date" id="dos" name="dos">
+        </div>
+        <div class="input">
+            <label for="sal">Sale Price</label>
+            <input type="text" id="sal" name="sal">
+        </div>
+        <button type="submit">UPDATE</button>
+    </form>
+
+</section>
+
+</section>
+<section class="delete">
+    <h3>Delete Data</h3>
+    <form action="/delete" method="post">
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <button type="submit">DELETE</button>
+    </form>
+</section>

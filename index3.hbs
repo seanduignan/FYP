@@ -1,0 +1,47 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="header">
+  <a href="/" class="logo">Farm Tracker</a>
+  <div class="header-right">
+    <a class = "active"  href="/get-data">Records</a>
+    <a href="/getim">Cattle</a>
+    <a href="/getfeed">Feed</a>
+    <a href="/getvet">Vet Bills</a>
+    <a href="/getsupply">Supplies</a>
+    <a href="/removeupdate">Remove/Update</a>
+    <a href="/get-profitdata">Profits</a>
+
+  </div>
+</div>
+
+<br>
+<b><a href="/get-data">Cattle |</a></b>
+<b><a href="/get-vetdata"> Vet bills |</a></b>
+<b><a href="/get-feeddata"> Feed |</a></b>
+<b><a href="/get-supplydata"> Supplies/Machinery</a></b>
+<br>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {font-family: Raleway, sans-serif; margin:0}
+    </style>
+    </head>
+
+</section2>
+<section2 class="get">
+    <h3>Vet Receipts</h3>
+    <div>
+        {{# each units }}
+            <article class="unit">
+                <b>Tag:</b> {{ this.tag1 }}
+                <b>Reason:</b> {{ this.reason }}
+                <b>Vet Name:</b> {{ this.vetname }}
+                <b>Cost:</b> {{ this.cost }}
+                <b>Date:</b> {{ this.date }}
+                <b>ID:</b> {{ this._id }}
+            </article>
+        {{/each}}
+    </div>
+</section2>

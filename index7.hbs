@@ -1,0 +1,186 @@
+<body>
+<div class="header">
+  <a href="/" class="logo">Farm Tracker</a>
+  <div class="header-right">
+    <a href="/get-data">Records</a>
+    <a href="/getim">Cattle</a>
+    <a href="/getfeed">Feed</a>
+    <a href="/getvet">Vet Bills</a>
+    <a href="/getsupply">Supplies</a>
+    <a href="/removeupdate">Remove/Update</a>
+    <a class = "active"  href="/get-profitdata">Profits</a>
+
+
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Raleway, sans-serif; margin:0}
+</style>
+</head>
+
+</section3>
+<section3 class="get">
+    <h3> 2019 profits</h3>
+    <div>
+
+            <article class="profit">
+                <div>Vet expenses: {{ totalProfit }}</div>
+                <div>Feed expenses: {{ totalProfit2 }}</div>
+                <div>Supplies purchased: {{ totalProfit3 }}</div>
+                <div>Cattle bought: {{ totalProfit4 }}</div>
+                <div>Cattle sold: {{ totalProfit5 }}</div>
+                <div>Total expenditure: {{ totalSpentAll }}</div>
+                <div>Annual profit/loss: {{ totalNum }}</div>
+
+            </article>
+    </div>
+</section3>
+
+</section3>
+<section3 class="get">
+    <h3>2018 profits</h3>
+    <div>
+
+            <article class="profit">
+                <div>Vet expenses: {{ totalProfit9 }}</div>
+                <div>Feed expenses: {{ totalProfit29 }}</div>
+                <div>Supplies purchased: {{ totalProfit39 }}</div>
+                <div>Cattle bought: {{ totalProfit49 }}</div>
+                <div>Cattle sold: {{ totalProfit59 }}</div>
+                <div>Total expenditure: {{ totalSpentAll9 }}</div>
+                <div>Annual profit/loss: {{ totalNum9 }}</div>
+
+            </article>
+    </div>
+</section3>
+
+</section3>
+<section3 class="get">
+    <h3>2017 profits</h3>
+    <div>
+            <article class="profit">
+                <div>Vet expenses: {{ totalProfit7 }}</div>
+                <div>Feed expenses: {{ totalProfit27 }}</div>
+                <div>Supplies purchased: {{ totalProfit37 }}</div>
+                <div>Cattle bought: {{ totalProfit47 }}</div>
+                <div>Cattle sold: {{ totalProfit57 }}</div>
+                <div>Total expenditure: {{ totalSpentAll7 }}</div>
+                <div>Annual profit/loss: {{ totalNum7 }}</div>
+            </article>
+    </div>
+</section3>
+
+</section3>
+<section3 class="get">
+    <h3>2016 profits</h3>
+    <div>
+            <article class="profit">
+                <div>Vet expenses: {{ totalProfit6 }}</div>
+                <div>Feed expenses: {{ totalProfit26 }}</div>
+                <div>Supplies purchased: {{ totalProfit36 }}</div>
+                <div>Cattle bought: {{ totalProfit46 }}</div>
+                <div>Cattle sold: {{ totalProfit56 }}</div>
+                <div>Total expenditure: {{ totalSpentAll6 }}</div>
+                <div>Annual profit/loss: {{ totalNum6 }}</div>
+            </article>
+    </div>
+</section3>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Raleway, sans-serif; margin:0}
+</style>
+</head>
+
+<body>
+  <div class="profit">
+    <canvas id="can"></canvas>
+  </div>
+
+  <script>
+    let myChart = document.getElementById('can').getContext('2d');
+
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['2019', '2018', '2017', '2016'],
+        datasets:[{
+          label:'Profit/Loss',
+          data:[
+            {{totalNum}},
+            {{totalNum9}},
+            {{totalNum7}},
+            {{totalNum6}}
+
+          ],
+
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(255, 99, 132, 1)'
+
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'black'
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Yearly Profit Margins',
+          fontSize:25,
+          fontColor:'black'
+        },
+        legend:{
+          display:false,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:50
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+  </script>
+</body>
+</html>
